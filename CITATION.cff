@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Qin"
+    given-names: "Z"
+title: "Detect hallucinated/typosquatted LLM-suggested dependencies"
+version: "v0.1.0"
+date-released: 2026-11-26
+license: MIT
+repository-code: "https://github.com/Qin-Z-x/slopsquat-guard"
