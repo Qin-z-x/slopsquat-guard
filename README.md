@@ -5,6 +5,8 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
 [![stdlib-only core](https://img.shields.io/badge/core-stdlib%20only-brightgreen.svg)](scripts/check_core_deps.py)
 
+> **If this is useful, a star or fork helps others find it.** It is a small, unaided project; stars/fork counts are the honest signal that keeps it maintained. No accounts, no telemetry, no paid promotion.
+
 **Find hallucinated and typosquatted dependencies before you install them** — extract
 Python imports and `requirements.txt` / `pyproject.toml` / `package.json`
 dependencies, verify every name against the real PyPI/npm registries, and flag
@@ -246,6 +248,19 @@ CI 门禁、`--offline` 离线确定性与单包 `verify`。示例的“LLM 风�
 **重要诚实声明**：注册表里存在 ≠ 安全。本工具只回答“名字是否存在/是否近似热门包”，
 不是恶意软件扫描器，也不保证模型推荐的包就是它想要的包。详见
 [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md)。
+
+## Related projects (same author, independent, stdlib-first)
+
+Other tools by the same author covering adjacent LLM failure surfaces. Each is independent: use or fork only the one you need; every README states its own limits.
+
+- [yixin-go](https://github.com/Qin-Z-x/yixin-go) - local-first Windows Go (weiqi/baduk) sparring partner built on KataGo + Human SL.
+- [llm-failbench](https://github.com/Qin-Z-x/llm-failbench) - 100 deterministic, judge-free failure probes for LLMs, with a cited evidence atlas and a CI regression gate.
+- [llm-json-doctor](https://github.com/Qin-Z-x/llm-json-doctor) - deterministic repair + JSON Schema validation for malformed LLM JSON; no LLM calls, stdlib only.
+- [llm-invisible-guard](https://github.com/Qin-Z-x/llm-invisible-guard) - detect and sanitize invisible-Unicode prompt injection (zero-width, bidi, Unicode-Tag smuggling).
+- [llm-exfil-guard](https://github.com/Qin-Z-x/llm-exfil-guard) - detect data exfiltration through rendered LLM output: image beacons, hidden content, remote loads.
+- [regex-redos-guard](https://github.com/Qin-Z-x/regex-redos-guard) - ReDoS (catastrophic backtracking) risk detection for LLM-generated regexes, static + timed probes.
+
+If one of these fits your pipeline, a star/fork on that repo is the only help this project asks for.
 
 ## License and acknowledgements
 
