@@ -1,0 +1,16 @@
+{
+  "name": "llm-demo-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Synthetic LLM-generated frontend manifest used by the slopsquat-guard evidence capture.",
+  "dependencies": {
+    "react": "^18.3.1",
+    "lodash": "^4.17.21",
+    "super-json-parser-pro": "^2.1.0",
+    "react-hooks-kit-x": "^1.0.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "express-validator-lite": "^1.0.0"
+  }
+}

@@ -1,0 +1,8 @@
+# Clean comparison manifest: only real, well-known packages.
+# This is what a careful LLM-generated manifest looks like; the scanner must not
+# raise high-severity findings for it.
+requests>=2.31
+flask==3.0.3
+pydantic>=2.7
+numpy>=1.26
+pandas>=2.2

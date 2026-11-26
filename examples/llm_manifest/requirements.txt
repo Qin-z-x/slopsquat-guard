@@ -1,0 +1,17 @@
+# Example "LLM-written" requirements manifest (synthetic demonstration).
+# This file is intentionally a mix of real, invented and near-miss names so the
+# scanner has something to classify. It is not a real project's dependency list.
+#
+# Real, well-known packages (must verify as existing):
+requests>=2.31
+flask==3.0.3
+pydantic>=2.7
+#
+# Clearly-invented hypothetical names (verified absent on PyPI at capture time):
+pandas-profiling-plus==0.4.0
+torch-helper-lite>=1.2
+openai-toolkit-x==2.0.1
+#
+# Typosquat-style near-misses of popular packages (verified absent at capture):
+reqeusts>=2.0
+numpyy==1.26.0

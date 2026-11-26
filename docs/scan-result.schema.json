@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Qin-Z-x/slopsquat-guard/docs/scan-result.schema.json",
+  "title": "slopsquat-guard scan result",
+  "description": "Shape of `slopsquat-guard scan --json` output.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tool", "version", "path", "offline", "include_imports", "allow", "summary", "dependencies", "findings", "errors", "stats", "popular_lists"],
+  "properties": {
+    "tool": { "type": "string", "const": "slopsquat-guard" },
+    "version": { "type": "string" },
+    "path": { "type": "string" },
+    "offline": { "type": "boolean" },
+    "include_imports": { "type": "boolean" },
+    "allow": { "type": "array", "items": { "type": "string" } },
+    "summary": {
+      "type": "object",
+      "required": ["total", "high", "medium", "low", "dependencies", "not_found", "verified_existing", "unverified", "typosquat_suspects"],
+      "additionalProperties": true,
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "high": { "type": "integer", "minimum": 0 },
+        "medium": { "type": "integer", "minimum": 0 },
+        "low": { "type": "integer", "minimum": 0 },
+        "dependencies": { "type": "integer", "minimum": 0 },
+        "not_found": { "type": "integer", "minimum": 0 },
+        "verified_existing": { "type": "integer", "minimum": 0 },
+        "unverified": { "type": "integer", "minimum": 0 },
+        "typosquat_suspects": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ecosystem", "name", "normalized", "source_file", "line", "origin"],
+        "additionalProperties": true,
+        "properties": {
+          "ecosystem": { "type": "string", "enum": ["pypi", "npm"] },
+          "name": { "type": "string", "minLength": 1 },
+          "normalized": { "type": "string", "minLength": 1 },
+          "source_file": { "type": "string" },
+          "line": { "type": "integer", "minimum": 0 },
+          "origin": { "type": "string" },
+          "specifier": { "type": "string" },
+          "import_name": { "type": ["string", "null"] },
+          "registry": { "type": ["object", "null"] },
+          "near_miss": { "type": ["object", "null"] },
+          "allowed": { "type": "boolean" },
+          "finding": { "type": ["object", "null"] }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "ecosystem", "name", "source_file", "line", "message"],
+        "additionalProperties": true,
+        "properties": {
+          "code": { "type": "string", "pattern": "^SQ-[A-Z-]+$" },
+          "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+          "ecosystem": { "type": "string" },
+          "name": { "type": "string" },
+          "source_file": { "type": "string" },
+          "line": { "type": "integer", "minimum": 0 },
+          "message": { "type": "string", "minLength": 1 },
+          "data": { "type": "object" }
+        }
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file", "error"],
+        "additionalProperties": false,
+        "properties": {
+          "file": { "type": "string" },
+          "error": { "type": "string" }
+        }
+      }
+    },
+    "stats": { "type": "object" },
+    "popular_lists": { "type": "object" }
+  }
+}

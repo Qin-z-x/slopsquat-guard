@@ -1,0 +1,21 @@
+{
+  "tool": "slopsquat-guard",
+  "version": "0.1.0",
+  "ecosystem": "pypi",
+  "name": "requests",
+  "normalized": "requests",
+  "registry": {
+    "ecosystem": "pypi",
+    "name": "requests",
+    "exists": true,
+    "status": 200,
+    "source": "cache-offline",
+    "checked_at": "2026-11-26T01:58:39.592493+00:00",
+    "version": "2.34.2",
+    "note": "offline mode: cached registry answer reused"
+  },
+  "near_miss": null,
+  "finding": null,
+  "in_popular_list": true,
+  "offline": true
+}

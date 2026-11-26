@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Qin-Z-x/slopsquat-guard/docs/verify-result.schema.json",
+  "title": "slopsquat-guard verify result",
+  "description": "Shape of `slopsquat-guard verify <name> --json` output.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tool", "version", "ecosystem", "name", "normalized", "registry", "near_miss", "finding", "in_popular_list", "offline"],
+  "properties": {
+    "tool": { "type": "string", "const": "slopsquat-guard" },
+    "version": { "type": "string" },
+    "ecosystem": { "type": "string", "enum": ["pypi", "npm"] },
+    "name": { "type": "string", "minLength": 1 },
+    "normalized": { "type": "string", "minLength": 1 },
+    "registry": {
+      "type": "object",
+      "required": ["ecosystem", "name", "exists", "status", "source"],
+      "additionalProperties": true,
+      "properties": {
+        "ecosystem": { "type": "string" },
+        "name": { "type": "string" },
+        "exists": { "type": ["boolean", "null"] },
+        "status": { "type": ["integer", "null"] },
+        "source": { "type": "string" }
+      }
+    },
+    "near_miss": { "type": ["object", "null"] },
+    "finding": { "type": ["object", "null"] },
+    "in_popular_list": { "type": "boolean" },
+    "offline": { "type": "boolean" }
+  }
+}

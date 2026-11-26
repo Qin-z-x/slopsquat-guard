@@ -1,0 +1,17 @@
+Windows PowerShell - slopsquat-guard evidence session (real captured output)
+
+$ python -m slopsquat_guard verify requests --offline --cache examples/registry_cache.json
+slopsquat-guard 0.1.0  verify  requests  (pypi: exists, source=cache-offline, version=2.34.2)
+in bundled popularity list: yes
+[exit code: 0]
+
+$ python -m slopsquat_guard verify reqeusts --offline --cache examples/registry_cache.json --fail-on high
+slopsquat-guard 0.1.0  verify  reqeusts  (pypi: missing, source=cache-offline)
+near-miss of popular 'requests': distance 1 (rank 8)
+HIGH   SQ-TYPOSQUAT     pypi reqeusts                     <verify>:0  name does not exist in pypi and is 1 edit(s) from popular 'requests' (typosquat/hallucination risk)
+[exit code: 1]
+
+$ python -m slopsquat_guard verify react --ecosystem npm --offline --cache examples/registry_cache.json
+slopsquat-guard 0.1.0  verify  react  (npm: exists, source=cache-offline, version=19.3.1)
+in bundled popularity list: yes
+[exit code: 0]

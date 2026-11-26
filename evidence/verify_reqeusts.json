@@ -1,0 +1,56 @@
+{
+  "tool": "slopsquat-guard",
+  "version": "0.1.0",
+  "ecosystem": "pypi",
+  "name": "reqeusts",
+  "normalized": "reqeusts",
+  "registry": {
+    "ecosystem": "pypi",
+    "name": "reqeusts",
+    "exists": false,
+    "status": 404,
+    "source": "cache-offline",
+    "checked_at": "2026-11-26T01:58:44.176211+00:00",
+    "version": null,
+    "note": "offline mode: cached registry answer reused"
+  },
+  "near_miss": {
+    "target": "requests",
+    "target_normalized": "requests",
+    "distance": 1,
+    "popularity_rank": 8,
+    "ecosystem": "pypi"
+  },
+  "finding": {
+    "code": "SQ-TYPOSQUAT",
+    "severity": "high",
+    "ecosystem": "pypi",
+    "name": "reqeusts",
+    "normalized": "reqeusts",
+    "source_file": "<verify>",
+    "line": 0,
+    "message": "name does not exist in pypi and is 1 edit(s) from popular 'requests' (typosquat/hallucination risk)",
+    "data": {
+      "ecosystem": "pypi",
+      "name": "reqeusts",
+      "normalized": "reqeusts",
+      "source_file": "<verify>",
+      "line": 0,
+      "origin": "verify",
+      "import_name": null,
+      "specifier": "",
+      "exists": false,
+      "registry_source": "cache-offline",
+      "registry_status": 404,
+      "near_miss": {
+        "target": "requests",
+        "target_normalized": "requests",
+        "distance": 1,
+        "popularity_rank": 8,
+        "ecosystem": "pypi"
+      }
+    }
+  },
+  "in_popular_list": false,
+  "offline": true
+}

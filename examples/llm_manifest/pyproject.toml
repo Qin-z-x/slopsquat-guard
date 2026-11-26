@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+
+[project]
+name = "llm-demo-service"
+version = "0.1.0"
+requires-python = ">=3.10"
+description = "Synthetic LLM-generated service used by the slopsquat-guard evidence capture."
+dependencies = [
+    "fastapi>=0.111",
+    "httpx>=0.27",
+    "llm-utils-magic>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "flassk>=0.9",
+]

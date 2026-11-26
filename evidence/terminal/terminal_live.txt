@@ -1,0 +1,17 @@
+Windows PowerShell - slopsquat-guard evidence session (real captured output)
+
+$ python -m slopsquat_guard scan --path examples/llm_manifest --cache C:\Users\28643\Downloads\slopsquat-guard\evidence\registry_cache_live.json
+slopsquat-guard 0.1.0  scan  examples/llm_manifest  (25 dependencies: 6 npm, 19 pypi; registry: 0 network, 25 cache, 0 error)
+HIGH   SQ-NOT-FOUND     npm  express-validator-lite       package.json:0  name does not exist in npm: likely a hallucinated/free-to-register name
+HIGH   SQ-NOT-FOUND     npm  react-hooks-kit-x            package.json:0  name does not exist in npm: likely a hallucinated/free-to-register name
+HIGH   SQ-NOT-FOUND     npm  super-json-parser-pro        package.json:0  name does not exist in npm: likely a hallucinated/free-to-register name
+HIGH   SQ-NOT-FOUND     pypi llm-utils-magic              pyproject.toml:0  name does not exist in pypi: likely a hallucinated/free-to-register name
+HIGH   SQ-TYPOSQUAT     pypi flassk                       pyproject.toml:0  name does not exist in pypi and is 1 edit(s) from popular 'flask' (typosquat/hallucination risk)
+HIGH   SQ-NOT-FOUND     pypi pandas-profiling-plus        requirements.txt:11  name does not exist in pypi: likely a hallucinated/free-to-register name
+HIGH   SQ-NOT-FOUND     pypi torch-helper-lite            requirements.txt:12  name does not exist in pypi: likely a hallucinated/free-to-register name
+HIGH   SQ-NOT-FOUND     pypi openai-toolkit-x             requirements.txt:13  name does not exist in pypi: likely a hallucinated/free-to-register name
+HIGH   SQ-TYPOSQUAT     pypi reqeusts                     requirements.txt:16  name does not exist in pypi and is 1 edit(s) from popular 'requests' (typosquat/hallucination risk)
+HIGH   SQ-TYPOSQUAT     pypi numpyy                       requirements.txt:17  name does not exist in pypi and is 1 edit(s) from popular 'numpy' (typosquat/hallucination risk)
+HIGH   SQ-NOT-FOUND     pypi llm_utils_magic              service.py:15  name does not exist in pypi: likely a hallucinated/free-to-register name (import-only check; the distribution name may differ)
+summary: 11 finding(s): 11 high, 0 medium, 0 low | 25 dependencies: 14 verified, 11 missing, 0 unverified
+[exit code: 0]

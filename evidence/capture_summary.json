@@ -1,0 +1,299 @@
+{
+  "tool": "slopsquat-guard",
+  "version": "0.1.0",
+  "captured_at_utc": "2026-11-26T02:00:25Z",
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15",
+    "captured_at": "2026-11-26T02:00:25Z"
+  },
+  "data_lists": {
+    "pypi": {
+      "path": "slopsquat_guard/data/pypi_top1000.txt",
+      "names": 1000,
+      "header": [
+        "slopsquat-guard bundled popularity list: PyPI",
+        "Source: https://hugovk.github.io/top-pypi-packages/top-pypi-packages-30-days.min.json",
+        "Metric: download_count over the last 30 days (public dataset)",
+        "Ranked at: 2026-11-26",
+        "Regenerate: python scripts/refresh_popularity.py",
+        "Popularity is a typosquat-target heuristic, not a security endorsement."
+      ]
+    },
+    "npm": {
+      "path": "slopsquat_guard/data/npm_top1000.txt",
+      "names": 1000,
+      "header": [
+        "slopsquat-guard bundled popularity list: npm",
+        "Source: npm registry search API + https://api.npmjs.org/downloads/point/last-week",
+        "Metric: weekly download count (npm downloads API; unscoped packages)",
+        "Ranked at: 2026-11-26",
+        "Regenerate: python scripts/refresh_popularity.py",
+        "Popularity is a typosquat-target heuristic, not a security endorsement."
+      ]
+    },
+    "sha256": {
+      "pypi_top1000.txt": "7a2a9c07a12e691c93708e780500c90c5011d58bbe666640088809eefe5e60d1",
+      "npm_top1000.txt": "30adfb1aec8082d4d8b70d94533b039a3592cf31cca5110d4dc18771ff3b29c5"
+    }
+  },
+  "offline_scan": {
+    "summary": {
+      "total": 11,
+      "high": 11,
+      "medium": 0,
+      "low": 0,
+      "dependencies": 25,
+      "checked": 25,
+      "not_found": 11,
+      "verified_existing": 14,
+      "unverified": 0,
+      "typosquat_suspects": 3,
+      "allowed": 0,
+      "registry_calls": {
+        "network": 0,
+        "cache": 0,
+        "error": 0,
+        "offline": 25
+      }
+    },
+    "scan_json_sha256": "998d5827a742a6fd7043a60d0401f73e94215d2bfd922cc7cfa3a283f2a0f006",
+    "findings": 11
+  },
+  "clean_manifest_exit_code": 0,
+  "live_scan": {
+    "exit_code": 0,
+    "summary": {
+      "total": 11,
+      "high": 11,
+      "medium": 0,
+      "low": 0,
+      "dependencies": 25,
+      "checked": 25,
+      "not_found": 11,
+      "verified_existing": 14,
+      "unverified": 0,
+      "typosquat_suspects": 3,
+      "allowed": 0,
+      "registry_calls": {
+        "network": 23,
+        "cache": 2,
+        "error": 0,
+        "offline": 0
+      }
+    },
+    "network_answers": 23
+  },
+  "verify": {
+    "requests": {
+      "exists": true,
+      "finding": null
+    },
+    "reqeusts": {
+      "exists": false,
+      "finding": {
+        "code": "SQ-TYPOSQUAT",
+        "severity": "high",
+        "ecosystem": "pypi",
+        "name": "reqeusts",
+        "normalized": "reqeusts",
+        "source_file": "<verify>",
+        "line": 0,
+        "message": "name does not exist in pypi and is 1 edit(s) from popular 'requests' (typosquat/hallucination risk)",
+        "data": {
+          "ecosystem": "pypi",
+          "name": "reqeusts",
+          "normalized": "reqeusts",
+          "source_file": "<verify>",
+          "line": 0,
+          "origin": "verify",
+          "import_name": null,
+          "specifier": "",
+          "exists": false,
+          "registry_source": "cache-offline",
+          "registry_status": 404,
+          "near_miss": {
+            "target": "requests",
+            "target_normalized": "requests",
+            "distance": 1,
+            "popularity_rank": 8,
+            "ecosystem": "pypi"
+          }
+        }
+      }
+    },
+    "react": {
+      "exists": true,
+      "finding": null
+    }
+  },
+  "tests": {
+    "count": 92,
+    "result": "OK",
+    "exit_code": 0,
+    "tail": "............................................................................................\n----------------------------------------------------------------------\nRan 92 tests in 2.902s\n\nOK"
+  },
+  "cli_exit_codes": [
+    {
+      "argv": [
+        "python",
+        "-m",
+        "slopsquat_guard",
+        "scan",
+        "--path",
+        "examples/llm_manifest",
+        "--offline",
+        "--cache",
+        "examples/registry_cache.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "slopsquat_guard",
+        "scan",
+        "--path",
+        "examples/llm_manifest",
+        "--offline",
+        "--cache",
+        "examples/registry_cache.json",
+        "--fail-on",
+        "high"
+      ],
+      "exit_code": 1
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "slopsquat_guard",
+        "scan",
+        "--path",
+        "examples/clean_manifest",
+        "--offline",
+        "--cache",
+        "examples/registry_cache.json",
+        "--fail-on",
+        "high"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "slopsquat_guard",
+        "verify",
+        "requests",
+        "--offline",
+        "--cache",
+        "examples/registry_cache.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "slopsquat_guard",
+        "verify",
+        "reqeusts",
+        "--offline",
+        "--cache",
+        "examples/registry_cache.json",
+        "--fail-on",
+        "high"
+      ],
+      "exit_code": 1
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "slopsquat_guard",
+        "verify",
+        "react",
+        "--ecosystem",
+        "npm",
+        "--offline",
+        "--cache",
+        "examples/registry_cache.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "slopsquat_guard",
+        "scan",
+        "--path",
+        "examples/llm_manifest",
+        "--cache",
+        "C:\\Users\\28643\\Downloads\\slopsquat-guard\\evidence\\registry_cache_live.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "slopsquat_guard",
+        "scan",
+        "--path",
+        "examples/llm_manifest",
+        "--offline",
+        "--cache",
+        "examples/registry_cache.json",
+        "--json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "slopsquat_guard",
+        "scan",
+        "--path",
+        "examples/llm_manifest",
+        "--cache",
+        "C:\\Users\\28643\\Downloads\\slopsquat-guard\\evidence\\registry_cache_live.json",
+        "--json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "screenshots": {
+    "scan": {
+      "path": "docs\\screenshots\\terminal_scan.png",
+      "sha256": "8cd2ef6376cceea01d7045dcb0c3ae3bb00788abcdc2363ffaf40437dbef216f",
+      "bytes": 162893
+    },
+    "verify": {
+      "path": "docs\\screenshots\\terminal_verify.png",
+      "sha256": "7954b28bfe2bbb675bd02bd91cbfcc8a9040f9affbe3ccb0f2de39e2aa622e91",
+      "bytes": 41034
+    },
+    "tests": {
+      "path": "docs\\screenshots\\terminal_tests.png",
+      "sha256": "68a76ec1e5a71ece188990f2df15f2f0a28088f601382b4ddff3d41508477aed",
+      "bytes": 12203
+    }
+  },
+  "assertions": {
+    "offline_scan_finds_high_severity_risks": true,
+    "offline_scan_finds_typosquat_suspects": true,
+    "offline_scan_flags_invented_names": true,
+    "real_pypi_packages_not_flagged": true,
+    "real_npm_packages_not_flagged": true,
+    "clean_manifest_passes_gate": true,
+    "offline_scan_is_deterministic": true,
+    "live_registry_answered": true,
+    "tests_pass": true,
+    "verify_single_name_results_correct": true
+  },
+  "all_assertions_pass": true
+}
